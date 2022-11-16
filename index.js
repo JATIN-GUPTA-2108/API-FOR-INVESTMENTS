@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use('/', investmentRouter);
 
 
-const connection_url="mongodb+srv://investment:investment@cluster0.fi9xj7y.mongodb.net/?retryWrites=true&w=majority";
+const connection_url=process.env.MongoUrl;
 const PORT = process.env.PORT|| 5000;
 
 mongoose.connect(connection_url, { useNewUrlParser: true, useUnifiedTopology: true })
